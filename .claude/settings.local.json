@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk tsc *)",
+      "mcp__Claude_Preview__preview_start",
+      "WebSearch",
+      "Bash(rtk ls *)",
+      "Bash(rtk grep *)",
+      "Bash(perl -i -ne 'print unless /^\\\\s{4}fitScore: \\\\d+,$/' /Users/rkafle/Desktop/app_development/CrazeProject/src/data/companies.ts)",
+      "Bash(perl -i -ne 'print unless /^\\\\s+fitScore: \\\\d+,$/' /Users/rkafle/Desktop/app_development/CrazeProject/src/components/AddCompanyModal.tsx)",
+      "Bash(node -e ' *)",
+      "Bash(rtk npx *)",
+      "Bash(rtk npm *)",
+      "Bash(rtk read *)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(rtk curl *)",
+      "Bash(rtk proxy *)",
+      "Bash(python3 -m json.tool)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
+    ]
+  }
+}
