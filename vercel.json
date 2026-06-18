@@ -4,11 +4,7 @@
       "source": "/api/nvidia/:path*",
       "destination": "https://integrate.api.nvidia.com/v1/:path*"
     },
-    {
-      "source": "/api/hunter/:path*",
-      "destination": "https://api.hunter.io/:path*"
-    },
-    {
+{
       "source": "/api/news/:path*",
       "destination": "https://newsapi.ai/:path*"
     }
