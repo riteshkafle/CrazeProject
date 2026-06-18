@@ -20,10 +20,15 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/nvidia/, '/v1'),
       },
-      '/api/hunter': {
+      '/api/hunter-domain': {
         target: 'https://api.hunter.io',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/hunter/, ''),
+        rewrite: () => '/v2/domain-search',
+      },
+      '/api/hunter-email': {
+        target: 'https://api.hunter.io',
+        changeOrigin: true,
+        rewrite: () => '/v2/email-finder',
       },
       '/api/news': {
         target: 'https://newsapi.ai',

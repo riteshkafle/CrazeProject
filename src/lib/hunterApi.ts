@@ -1,5 +1,4 @@
 const HUNTER_KEY = import.meta.env.VITE_HUNTER_API_KEY as string;
-const BASE = '/api/hunter';
 
 export interface HunterPerson {
   first_name: string;
@@ -21,7 +20,7 @@ export interface HunterEmailResult {
 }
 
 export async function hunterDomainSearch(domain: string, limit = 10): Promise<HunterPerson[]> {
-  const url = `${BASE}/v2/domain-search?domain=${encodeURIComponent(domain)}&limit=${limit}&api_key=${HUNTER_KEY}`;
+  const url = `/api/hunter-domain?domain=${encodeURIComponent(domain)}&limit=${limit}&api_key=${HUNTER_KEY}`;
   const res = await fetch(url);
   if (!res.ok) {
     const body = await res.text().catch(() => '');
@@ -45,7 +44,7 @@ export async function hunterEmailFinder(
   firstName: string,
   lastName: string,
 ): Promise<HunterEmailResult | null> {
-  const url = `${BASE}/v2/email-finder?domain=${encodeURIComponent(domain)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}&api_key=${HUNTER_KEY}`;
+  const url = `/api/hunter-email?domain=${encodeURIComponent(domain)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}&api_key=${HUNTER_KEY}`;
   const res = await fetch(url);
   if (!res.ok) return null;
   const data = await res.json();
