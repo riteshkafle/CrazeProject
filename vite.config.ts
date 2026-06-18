@@ -23,12 +23,12 @@ export default defineConfig({
       '/api/hunter-domain': {
         target: 'https://api.hunter.io',
         changeOrigin: true,
-        rewrite: () => '/v2/domain-search',
+        rewrite: (path) => path.replace('/api/hunter-domain', '/v2/domain-search'),
       },
       '/api/hunter-email': {
         target: 'https://api.hunter.io',
         changeOrigin: true,
-        rewrite: () => '/v2/email-finder',
+        rewrite: (path) => path.replace('/api/hunter-email', '/v2/email-finder'),
       },
       '/api/news': {
         target: 'https://newsapi.ai',
