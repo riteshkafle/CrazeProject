@@ -47,7 +47,7 @@ export async function generateSmartReply(
 
   let news: NewsArticle[] = [];
   try {
-    news = await fetchCompanyNews(company.name, 5);
+    news = await fetchCompanyNews(company.id, company.name, 5);
   } catch {
     // continue without news
   }
